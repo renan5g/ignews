@@ -1,5 +1,5 @@
-import { createStitches, defaultThemeMap } from '@stitches/react';
 import type * as Stitches from '@stitches/react';
+import { createStitches, defaultThemeMap } from '@stitches/react';
 export type { VariantProps } from '@stitches/react';
 
 type SpaceValue = Stitches.ScaleValue<'space'>;
@@ -22,7 +22,22 @@ export const {
   },
 
   theme: {
-    colors: {},
+    colors: {
+      white: 'hsl(0 0% 100%)',
+
+      'gray-100': 'hsl(240 9% 89%)',
+      'gray-300': 'hsl(240 7% 68%)',
+      'gray-800': 'hsl(240 6% 17%)',
+      'gray-900': 'hsl(192 6% 8%)',
+
+      'cyan-500': 'hsl(192 95% 68%)',
+      'cyan-900': 'hsl(192 14% 14%)',
+
+      'yellow-500': 'hsl(40 84% 51%)',
+      'green-500': 'hsl(146 96% 42%)',
+
+      background: '$gray-900',
+    },
 
     space: {
       px: '1px',
@@ -60,20 +75,13 @@ export const {
     },
 
     fonts: {
-      default: 'Poppins, apple-system, sans-serif',
+      default: 'Roboto, apple-system, sans-serif',
     },
 
     fontWeights: {
-      regular: 'regular',
-      medium: 'medium',
-      bold: 'bold',
-    },
-
-    lineHeights: {
-      shorter: '125%',
-      short: '140%',
-      base: '160%',
-      tall: '180%',
+      regular: 400,
+      bold: 700,
+      black: 900,
     },
 
     borderWidths: {
@@ -85,8 +93,6 @@ export const {
 
     sizes: {
       maxWidth: '1120px', // 1120px or 70rem
-      max: 'max-content',
-      min: 'min-content',
       full: '100%',
     },
 
@@ -107,53 +113,15 @@ export const {
       ligth: '25%',
       semiTransparent: '10%',
     },
-
-    zIndices: {
-      hide: -1,
-      auto: 'auto',
-      base: 0,
-      docked: 10,
-      dropdown: 1000,
-      sticky: 1100,
-      banner: 1200,
-      overlay: 1300,
-      modal: 1400,
-      popover: 1500,
-      skipLink: 1600,
-      toast: 1700,
-      tooltip: 1800,
-    },
   },
 
   media: {
     mobile: '(max-width: 375px)',
     tablet: '(max-width: 768px)',
-    laptop: '(max-width: 1024px)',
-    desktop: '(max-width: 1440px)',
-    motion: '(prefers-reduced-motion: no-preference)',
-    dark: '(prefers-color-scheme: dark)',
-    light: '(prefers-color-scheme: light)',
+    desktop: '(max-width: 1024px)',
   },
 
   utils: {
-    p: (value: SpaceValue) => ({
-      paddingTop: value,
-      paddingBottom: value,
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    pt: (value: SpaceValue) => ({
-      paddingTop: value,
-    }),
-    pr: (value: SpaceValue) => ({
-      paddingRight: value,
-    }),
-    pb: (value: SpaceValue) => ({
-      paddingBottom: value,
-    }),
-    pl: (value: SpaceValue) => ({
-      paddingLeft: value,
-    }),
     px: (value: SpaceValue) => ({
       paddingLeft: value,
       paddingRight: value,
@@ -161,24 +129,6 @@ export const {
     py: (value: SpaceValue) => ({
       paddingTop: value,
       paddingBottom: value,
-    }),
-    m: (value: SpaceValue) => ({
-      marginTop: value,
-      marginBottom: value,
-      marginLeft: value,
-      marginRight: value,
-    }),
-    mt: (value: SpaceValue) => ({
-      marginTop: value,
-    }),
-    mr: (value: SpaceValue) => ({
-      marginRight: value,
-    }),
-    mb: (value: SpaceValue) => ({
-      marginBottom: value,
-    }),
-    ml: (value: SpaceValue) => ({
-      marginLeft: value,
     }),
     mx: (value: SpaceValue) => ({
       marginLeft: value,
@@ -220,6 +170,7 @@ export const globalStyles = globalCss({
 
   body: {
     backgroundColor: '$background',
+    color: '$white',
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   },

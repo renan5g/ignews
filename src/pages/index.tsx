@@ -1,7 +1,17 @@
+import { Home } from '@templates/Home';
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
 const Page: NextPage = () => {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <Head>
+        <title>Início | ig.news</title>
+      </Head>
+
+      <Home />
+    </>
+  );
 };
 
 export default Page;
